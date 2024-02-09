@@ -16,9 +16,9 @@ import lombok.ToString;
 @ToString
 public class UserDto {
 	
-	@JsonProperty(access = Access.READ_ONLY) // used during serialization
-	private Long id;
-	
+//	@JsonProperty(access = Access.READ_ONLY) // used during serialization
+//	private Long id;
+//	
 	@NotBlank
 	private String name;
 	

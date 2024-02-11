@@ -91,7 +91,8 @@ public class UserImpl implements UserService {
 			User save=udao.save(oldu1);
 			
 			mm.map(newdto, save);
-			System.out.println("after mapping " + save);		
+			System.out.println("after mapping " + save);
+			System.out.println("");
 			return newdto;
 			
 

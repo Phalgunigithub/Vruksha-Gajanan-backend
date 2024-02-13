@@ -1,8 +1,10 @@
 package com.app.entities;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -15,9 +17,12 @@ import lombok.experimental.FieldNameConstants;
 @Table(name = "cart")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Carts extends BaseEntity{
 	
-	private CartItem cartitem;
+	@OneToMany
+	private Set<CartItem> items =new HashSet<CartItem>();
 	
 	
 	

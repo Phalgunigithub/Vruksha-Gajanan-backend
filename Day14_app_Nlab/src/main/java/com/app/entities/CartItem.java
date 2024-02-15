@@ -14,8 +14,7 @@ import lombok.Setter;
 @Table(name = "cart")
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class CartItem extends BaseEntity{
 	
 	private int quantity;

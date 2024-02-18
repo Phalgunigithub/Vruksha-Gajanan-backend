@@ -10,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -48,7 +49,8 @@ public class User extends BaseEntity implements UserDetails{
 	@ManyToMany(fetch = FetchType.EAGER,cascade=CascadeType.ALL )
 	Set<Roles> role=new HashSet<>();
 
-	
+	@OneToOne(mappedBy ="user")
+	private Carts cart;
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

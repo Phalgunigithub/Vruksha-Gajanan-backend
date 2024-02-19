@@ -13,6 +13,7 @@ import com.app.custom_exceptions.ApiException;
 import com.app.custom_exceptions.ResourceNotFoundException;
 import com.app.dao.UserDao;
 import com.app.dto.ApiResponse;
+import com.app.dto.AuthDto;
 import com.app.dto.ProductDto;
 import com.app.dto.UserDto;
 import com.app.entities.Product;
@@ -101,6 +102,21 @@ public class UserImpl implements UserService {
 		
 		
 		
+	}
+
+	@Override
+	public UserDto loginUser(AuthDto authDto) {
+		User user = udao.findByEmailAndPassword(authDto.getEmail(), authDto.getPassword());
+
+		if (user != null) {			
+			UserDto userDto = mm.map(user, UserDto.class);
+			
+			
+			return userDto;
+		} 
+		else {
+			throw new ResourceNotFoundException("No such user exists with that email and password!!");
+		}
 	}
 	}
 	

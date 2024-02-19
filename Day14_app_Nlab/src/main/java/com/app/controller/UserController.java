@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.app.dto.AuthDto;
 import com.app.dto.ProductDto;
 import com.app.dto.UserDto;
 import com.app.service.UserService;
@@ -63,6 +64,15 @@ public class UserController {
 		public ResponseEntity<?> updateProduct(@PathVariable Long Id, @RequestBody @Valid UserDto dto) {
 			System.out.println("in update user " + Id + " " + dto);
 			return ResponseEntity.ok(uService.updateUser(Id, dto));
+		}
+		
+		
+		//sign in
+		@PostMapping("/sign-in")
+		public ResponseEntity<?> loginUser(@RequestBody @Valid AuthDto authDto) {
+			System.out.println(authDto);
+			UserDto userDto = uService.loginUser(authDto);
+			return ResponseEntity.status(HttpStatus.OK).body(userDto);
 		}
 
 }

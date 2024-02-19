@@ -8,6 +8,7 @@ import com.app.entities.User;
 
 public interface UserDao extends JpaRepository<User, Long> {
 
-	
+	User findByEmailAndPassword(String email, String password);
+
 	
 }

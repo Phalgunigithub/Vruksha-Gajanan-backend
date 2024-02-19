@@ -1,12 +1,11 @@
 package com.app.service;
 
 import java.util.List;
-
 import com.app.dto.ApiResponse;
 import com.app.dto.ProductDto;
 import com.app.dto.UserDto;
 
-public interface UserService {
+public interface UserService  {
 	
 	//create
 	UserDto addNewUser(UserDto udto);

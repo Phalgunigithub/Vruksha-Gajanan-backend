@@ -8,6 +8,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.springframework.stereotype.Component;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,6 +22,7 @@ import lombok.experimental.FieldNameConstants;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Component
 public class Carts extends BaseEntity{
 	
 	@OneToMany
